@@ -1,0 +1,62 @@
+.container {
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.header {
+  margin-bottom: 30rpx;
+  padding: 20rpx 0;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.pet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.pet-card {
+  background-color: #fff;
+  border-radius: 20rpx;
+  display: flex;
+  padding: 20rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.pet-image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  background-color: #eee;
+}
+
+.pet-info {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pet-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.pet-breed {
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 8rpx;
+}
+
+.empty-state {
+  text-align: center;
+  margin-top: 100rpx;
+  color: #999;
+}

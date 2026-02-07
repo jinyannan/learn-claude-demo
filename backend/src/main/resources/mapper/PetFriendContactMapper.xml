@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.learnclaudedemo.mapper.PetFriendContactMapper">
+    <resultMap id="BaseResultMap" type="com.example.learnclaudedemo.entity.PetFriendContact">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="contact_user_id" property="contactUserId"/>
+        <result column="contact_name" property="contactName"/>
+        <result column="contact_phone" property="contactPhone"/>
+        <result column="contact_wechat" property="contactWechat"/>
+        <result column="contact_qq" property="contactQq"/>
+        <result column="tags" property="tags"/>
+        <result column="notes" property="notes"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, user_id, contact_user_id, contact_name, contact_phone, contact_wechat, contact_qq, tags, notes, create_time, update_time
+    </sql>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM pet_friend_contact WHERE id = #{id}
+    </select>
+
+    <select id="selectByUserId" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM pet_friend_contact WHERE user_id = #{userId}
+    </select>
+
+    <select id="selectByUserAndContact" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM pet_friend_contact WHERE user_id = #{userId} AND contact_user_id = #{contactUserId}
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO pet_friend_contact (user_id, contact_user_id, contact_name, contact_phone, contact_wechat, contact_qq, tags, notes, create_time, update_time)
+        VALUES (#{userId}, #{contactUserId}, #{contactName}, #{contactPhone}, #{contactWechat}, #{contactQq}, #{tags}, #{notes}, NOW(), NOW())
+    </insert>
+
+    <update id="update">
+        UPDATE pet_friend_contact
+        <set>
+            <if test="contactName != null">contact_name = #{contactName},</if>
+            <if test="contactPhone != null">contact_phone = #{contactPhone},</if>
+            <if test="contactWechat != null">contact_wechat = #{contactWechat},</if>
+            <if test="contactQq != null">contact_qq = #{contactQq},</if>
+            <if test="tags != null">tags = #{tags},</if>
+            <if test="notes != null">notes = #{notes},</if>
+            update_time = NOW()
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteById">
+        DELETE FROM pet_friend_contact WHERE id = #{id}
+    </delete>
+</mapper>

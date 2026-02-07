@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.learnclaudedemo.mapper.UserBehaviorMapper">
+    <resultMap id="BaseResultMap" type="com.example.learnclaudedemo.entity.UserBehavior">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="behavior_type" property="behaviorType"/>
+        <result column="target_type" property="targetType"/>
+        <result column="target_id" property="targetId"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, user_id, behavior_type, target_type, target_id, create_time
+    </sql>
+
+    <select id="selectByUserId" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM user_behavior WHERE user_id = #{userId} ORDER BY create_time DESC
+    </select>
+
+    <select id="selectByTarget" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM user_behavior WHERE target_type = #{targetType} AND target_id = #{targetId}
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user_behavior (user_id, behavior_type, target_type, target_id, create_time)
+        VALUES (#{userId}, #{behaviorType}, #{targetType}, #{targetId}, NOW())
+    </insert>
+</mapper>

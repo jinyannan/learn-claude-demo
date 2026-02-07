@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.learnclaudedemo.mapper.MessageMapper">
+    <resultMap id="BaseResultMap" type="com.example.learnclaudedemo.entity.Message">
+        <id column="id" property="id"/>
+        <result column="sender_id" property="senderId"/>
+        <result column="receiver_id" property="receiverId"/>
+        <result column="content" property="content"/>
+        <result column="msg_type" property="msgType"/>
+        <result column="is_read" property="isRead"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, sender_id, receiver_id, content, msg_type, is_read, create_time, update_time
+    </sql>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM message WHERE id = #{id}
+    </select>
+
+    <select id="selectBySenderId" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM message WHERE sender_id = #{senderId}
+    </select>
+
+    <select id="selectByReceiverId" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM message WHERE receiver_id = #{receiverId}
+    </select>
+
+    <select id="selectChatHistory" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM message
+        WHERE (sender_id = #{user1} AND receiver_id = #{user2})
+           OR (sender_id = #{user2} AND receiver_id = #{user1})
+        ORDER BY create_time ASC
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO message (sender_id, receiver_id, content, msg_type, is_read, create_time, update_time)
+        VALUES (#{senderId}, #{receiverId}, #{content}, #{msgType}, #{isRead}, NOW(), NOW())
+    </insert>
+
+    <update id="update">
+        UPDATE message
+        <set>
+            <if test="senderId != null">sender_id = #{senderId},</if>
+            <if test="receiverId != null">receiver_id = #{receiverId},</if>
+            <if test="content != null">content = #{content},</if>
+            <if test="msgType != null">msg_type = #{msgType},</if>
+            <if test="isRead != null">is_read = #{isRead},</if>
+            update_time = NOW()
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteById">
+        DELETE FROM message WHERE id = #{id}
+    </delete>
+</mapper>

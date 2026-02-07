@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.learnclaudedemo.mapper.ServiceTypeMapper">
+    <resultMap id="BaseResultMap" type="com.example.learnclaudedemo.entity.ServiceType">
+        <id column="id" property="id"/>
+        <result column="type_name" property="typeName"/>
+        <result column="type_code" property="typeCode"/>
+        <result column="description" property="description"/>
+        <result column="icon" property="icon"/>
+        <result column="sort_order" property="sortOrder"/>
+        <result column="status" property="status"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, type_name, type_code, description, icon, sort_order, status, create_time
+    </sql>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM service_type WHERE id = #{id}
+    </select>
+
+    <select id="selectByTypeCode" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM service_type WHERE type_code = #{typeCode}
+    </select>
+
+    <select id="selectAllEnabled" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM service_type WHERE status = 1 ORDER BY sort_order ASC
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO service_type (type_name, type_code, description, icon, sort_order, status, create_time)
+        VALUES (#{typeName}, #{typeCode}, #{description}, #{icon}, #{sortOrder}, #{status}, NOW())
+    </insert>
+
+    <update id="update">
+        UPDATE service_type
+        <set>
+            <if test="typeName != null">type_name = #{typeName},</if>
+            <if test="typeCode != null">type_code = #{typeCode},</if>
+            <if test="description != null">description = #{description},</if>
+            <if test="icon != null">icon = #{icon},</if>
+            <if test="sortOrder != null">sort_order = #{sortOrder},</if>
+            <if test="status != null">status = #{status},</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteById">
+        DELETE FROM service_type WHERE id = #{id}
+    </delete>
+</mapper>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.learnclaudedemo.mapper.CommunityPostMapper">
+    <resultMap id="BaseResultMap" type="com.example.learnclaudedemo.entity.CommunityPost">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="pet_id" property="petId"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="images" property="images"/>
+        <result column="post_type" property="postType"/>
+        <result column="tags" property="tags"/>
+        <result column="location" property="location"/>
+        <result column="like_count" property="likeCount"/>
+        <result column="comment_count" property="commentCount"/>
+        <result column="view_count" property="viewCount"/>
+        <result column="is_top" property="isTop"/>
+        <result column="status" property="status"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, user_id, pet_id, title, content, images, post_type, tags, ST_AsText(location) as location, like_count, comment_count, view_count, is_top, status, create_time, update_time
+    </sql>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM community_post WHERE id = #{id}
+    </select>
+
+    <select id="selectByUserId" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM community_post WHERE user_id = #{userId}
+    </select>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM community_post
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO community_post (user_id, pet_id, title, content, images, post_type, tags, location, like_count, comment_count, view_count, is_top, status, create_time, update_time)
+        VALUES (#{userId}, #{petId}, #{title}, #{content}, #{images}, #{postType}, #{tags}, ST_GeomFromText(#{location}), #{likeCount}, #{commentCount}, #{viewCount}, #{isTop}, #{status}, NOW(), NOW())
+    </insert>
+
+    <update id="update">
+        UPDATE community_post
+        <set>
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="petId != null">pet_id = #{petId},</if>
+            <if test="title != null">title = #{title},</if>
+            <if test="content != null">content = #{content},</if>
+            <if test="images != null">images = #{images},</if>
+            <if test="postType != null">post_type = #{postType},</if>
+            <if test="tags != null">tags = #{tags},</if>
+            <if test="location != null">location = ST_GeomFromText(#{location}),</if>
+            <if test="likeCount != null">like_count = #{likeCount},</if>
+            <if test="commentCount != null">comment_count = #{commentCount},</if>
+            <if test="viewCount != null">view_count = #{viewCount},</if>
+            <if test="isTop != null">is_top = #{isTop},</if>
+            <if test="status != null">status = #{status},</if>
+            update_time = NOW()
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteById">
+        DELETE FROM community_post WHERE id = #{id}
+    </delete>
+</mapper>

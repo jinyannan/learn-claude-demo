@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.learnclaudedemo.mapper.SysConfigMapper">
+    <resultMap id="BaseResultMap" type="com.example.learnclaudedemo.entity.SysConfig">
+        <id column="customs_code" property="customsCode"/>
+        <id column="customs_type" property="customsType"/>
+        <result column="host" property="host"/>
+        <result column="port" property="port"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="virtual_host" property="virtualHost"/>
+        <result column="queue_name" property="queueName"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        customs_code, customs_type, host, port, username, password, virtual_host, queue_name
+    </sql>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM sys_config
+        WHERE customs_code = #{customsCode} AND customs_type = #{customsType}
+    </select>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM sys_config
+    </select>
+
+    <insert id="insert">
+        INSERT INTO sys_config (customs_code, customs_type, host, port, username, password, virtual_host, queue_name)
+        VALUES (#{customsCode}, #{customsType}, #{host}, #{port}, #{username}, #{password}, #{virtualHost}, #{queueName})
+    </insert>
+
+    <update id="update">
+        UPDATE sys_config
+        <set>
+            <if test="host != null">host = #{host},</if>
+            <if test="port != null">port = #{port},</if>
+            <if test="username != null">username = #{username},</if>
+            <if test="password != null">password = #{password},</if>
+            <if test="virtualHost != null">virtual_host = #{virtualHost},</if>
+            <if test="queueName != null">queue_name = #{queueName},</if>
+        </set>
+        WHERE customs_code = #{customsCode} AND customs_type = #{customsType}
+    </update>
+
+    <delete id="deleteByPrimaryKey">
+        DELETE FROM sys_config
+        WHERE customs_code = #{customsCode} AND customs_type = #{customsType}
+    </delete>
+</mapper>

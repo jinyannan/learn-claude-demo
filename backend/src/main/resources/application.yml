@@ -1,0 +1,59 @@
+server:
+  port: 8080
+  domain: http://localhost
+
+spring:
+  application:
+    name: learn-claude-demo
+
+  # RabbitMQ Configuration is now loaded from database (sys_config table) via RabbitMqConfig class
+  # rabbitmq:
+  #   host: localhost
+  #   port: 5672
+  #   username: guest
+  #   password: guest
+  #   virtual-host: /
+
+  # 数据源配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/learn_claude?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: 5Ijinshoucai~
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # JPA 配置
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+
+  # 文件上传配置
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+      enabled: true
+
+# MyBatis 配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.learnclaudedemo.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 自定义配置
+file:
+  upload:
+    dir: uploads
+
+# 日志配置
+logging:
+  level:
+    com.example.learnclaudedemo: DEBUG
+    org.springframework.web: INFO
+

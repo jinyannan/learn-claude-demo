@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PetConnect Web</title>
+</head>
+
+<body>
+  <div id="app" class="app-container">
+    <header class="glass-effect" style="padding: 20px; position: sticky; top: 0; z-index: 100;">
+      <h1 style="color: var(--primary-color);">PetConnect</h1>
+    </header>
+
+    <main id="main-content" style="padding-bottom: 100px;">
+      <!-- Content will be injected here -->
+      <div class="loading" style="text-align: center; margin-top: 50px;">
+        <p style="color: var(--text-secondary);">加载中...</p>
+      </div>
+    </main>
+
+    <nav class="nav-bar glass-effect">
+      <a href="#" class="nav-item active" data-page="home">
+        <span class="nav-icon">🏠</span>
+        <span>首页</span>
+      </a>
+      <a href="#" class="nav-item" data-page="discover">
+        <span class="nav-icon">🔍</span>
+        <span>发现</span>
+      </a>
+      <a href="#" class="nav-item" data-page="community">
+        <span class="nav-icon">👥</span>
+        <span>社区</span>
+      </a>
+      <a href="#" class="nav-item" data-page="profile">
+        <span class="nav-icon">👤</span>
+        <span>我的</span>
+      </a>
+    </nav>
+
+    <!-- Auth Overlay -->
+    <div id="auth-overlay" class="auth-overlay hidden">
+      <div class="auth-card glass-effect">
+        <h2 id="auth-title" style="color: white; margin-bottom: 20px;">欢迎回来</h2>
+        <div class="input-group">
+          <input type="text" id="auth-username" placeholder="用户名">
+        </div>
+        <div id="register-fields" class="hidden">
+          <div class="input-group">
+            <input type="email" id="auth-email" placeholder="邮箱">
+          </div>
+        </div>
+        <div class="input-group">
+          <input type="password" id="auth-password" placeholder="密码">
+        </div>
+        <p id="auth-error" style="color: #ff4d4d; font-size: 0.8rem; margin-top: 10px;" class="hidden"></p>
+        <button id="auth-submit" class="auth-btn">登录</button>
+        <p id="auth-toggle" class="toggle-auth">没有账号？点击注册</p>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

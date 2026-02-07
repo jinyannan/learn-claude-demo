@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.learnclaudedemo.mapper.ServiceOrderMapper">
+    <resultMap id="BaseResultMap" type="com.example.learnclaudedemo.entity.ServiceOrder">
+        <id column="id" property="id"/>
+        <result column="order_no" property="orderNo"/>
+        <result column="service_id" property="serviceId"/>
+        <result column="provider_id" property="providerId"/>
+        <result column="customer_id" property="customerId"/>
+        <result column="pet_id" property="petId"/>
+        <result column="service_time" property="serviceTime"/>
+        <result column="service_address" property="serviceAddress"/>
+        <result column="price" property="price"/>
+        <result column="status" property="status"/>
+        <result column="remark" property="remark"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, order_no, service_id, provider_id, customer_id, pet_id, service_time, service_address, price, status, remark, create_time, update_time
+    </sql>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM service_order WHERE id = #{id}
+    </select>
+
+    <select id="selectByOrderNo" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM service_order WHERE order_no = #{orderNo}
+    </select>
+
+    <select id="selectByCustomerId" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM service_order WHERE customer_id = #{customerId}
+    </select>
+
+    <select id="selectByProviderId" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM service_order WHERE provider_id = #{providerId}
+    </select>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM service_order
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO service_order (order_no, service_id, provider_id, customer_id, pet_id, service_time, service_address, price, status, remark, create_time, update_time)
+        VALUES (#{orderNo}, #{serviceId}, #{providerId}, #{customerId}, #{petId}, #{serviceTime}, #{serviceAddress}, #{price}, #{status}, #{remark}, NOW(), NOW())
+    </insert>
+
+    <update id="update">
+        UPDATE service_order
+        <set>
+            <if test="orderNo != null">order_no = #{orderNo},</if>
+            <if test="serviceId != null">service_id = #{serviceId},</if>
+            <if test="providerId != null">provider_id = #{providerId},</if>
+            <if test="customerId != null">customer_id = #{customerId},</if>
+            <if test="petId != null">pet_id = #{petId},</if>
+            <if test="serviceTime != null">service_time = #{serviceTime},</if>
+            <if test="serviceAddress != null">service_address = #{serviceAddress},</if>
+            <if test="price != null">price = #{price},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            update_time = NOW()
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteById">
+        DELETE FROM service_order WHERE id = #{id}
+    </delete>
+</mapper>
