@@ -42,20 +42,28 @@
 
     <!-- Auth Overlay -->
     <div id="auth-overlay" class="auth-overlay hidden">
-      <div class="auth-card glass-effect">
-        <h2 id="auth-title" style="color: white; margin-bottom: 20px;">欢迎回来</h2>
+      <div class="auth-card">
+        <h2 id="auth-title">欢迎回来</h2>
+        <p id="auth-subtitle">连接你与宠物的世界</p>
+
         <div class="input-group">
           <input type="text" id="auth-username" placeholder="用户名">
         </div>
+
         <div id="register-fields" class="hidden">
           <div class="input-group">
             <input type="email" id="auth-email" placeholder="邮箱">
           </div>
         </div>
+
         <div class="input-group">
           <input type="password" id="auth-password" placeholder="密码">
         </div>
-        <p id="auth-error" style="color: #ff4d4d; font-size: 0.8rem; margin-top: 10px;" class="hidden"></p>
+
+        <p id="auth-error"
+          style="color: #ffcccc; font-size: 0.85rem; margin-top: 10px; background: rgba(255,0,0,0.2); padding: 8px; border-radius: 10px;"
+          class="hidden"></p>
+
         <button id="auth-submit" class="auth-btn">登录</button>
         <p id="auth-toggle" class="toggle-auth">没有账号？点击注册</p>
       </div>

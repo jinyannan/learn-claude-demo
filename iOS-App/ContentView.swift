@@ -19,7 +19,7 @@ struct ContentView: View {
                     }
                     .tag(1)
 
-                FeedView()
+                DiscoveryFeedView()
                     .tabItem {
                         Label("社区", systemImage: selectedTab == 2 ? "text.bubble.fill" : "text.bubble")
                     }

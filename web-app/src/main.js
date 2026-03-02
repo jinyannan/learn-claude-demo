@@ -104,6 +104,7 @@ async function navigate(pageId) {
 authToggle.addEventListener('click', () => {
   isRegisterMode = !isRegisterMode;
   authTitle.textContent = isRegisterMode ? '加入 PetConnect' : '欢迎回来';
+  document.querySelector('#auth-subtitle').textContent = isRegisterMode ? '开启一段全新的宠物社交之旅' : '连接你与宠物的世界';
   authSubmit.textContent = isRegisterMode ? '注册' : '登录';
   authToggle.textContent = isRegisterMode ? '已有账号？点击登录' : '没有账号？点击注册';
   registerFields.classList.toggle('hidden', !isRegisterMode);

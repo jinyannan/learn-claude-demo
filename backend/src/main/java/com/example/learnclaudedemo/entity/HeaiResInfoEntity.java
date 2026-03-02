@@ -1,4 +1,4 @@
-package com.example.learnclaudedemo.entity.xml;
+package com.example.learnclaudedemo.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -25,7 +25,6 @@ public class HeaiResInfoEntity {
      */
     @Column(name = "STATUS", length = 2)
     private String status;
-
     /**
      * 记录创建时间
      */
