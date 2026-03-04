@@ -7,7 +7,7 @@ struct PetProfile: Identifiable {
     let ownerName: String?
 }
 
-struct FeedPost: Identifiable {
+struct OldFeedPost: Identifiable {
     let id = UUID()
     let author: String
     let authorAvatar: String
@@ -26,6 +26,6 @@ let mockStories = [
 ]
 
 let mockFeed = [
-    FeedPost(author: "Viotta", authorAvatar: "u1", postImage: "cat_main", likes: 1240, comments: 45, description: "Enjoying the afternoon sun! 🐱"),
-    FeedPost(author: "James", authorAvatar: "u2", postImage: "dog_run", likes: 890, comments: 12, description: "Beach day with Max! 🏖️")
+    OldFeedPost(author: "Viotta", authorAvatar: "u1", postImage: "cat_main", likes: 1240, comments: 45, description: "Enjoying the afternoon sun! 🐱"),
+    OldFeedPost(author: "James", authorAvatar: "u2", postImage: "dog_run", likes: 890, comments: 12, description: "Beach day with Max! 🏖️")
 ]

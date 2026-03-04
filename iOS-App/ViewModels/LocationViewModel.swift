@@ -46,27 +46,33 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
 
     // MARK: - CLLocationManagerDelegate
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    nonisolated func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
-        self.currentLocation = location
+        Task { @MainActor in
+            self.currentLocation = location
+        }
     }
 
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        self.errorMessage = "Location error: \(error.localizedDescription)"
+    nonisolated func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        Task { @MainActor in
+            self.errorMessage = "Location error: \(error.localizedDescription)"
+        }
     }
 
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        self.authorizationStatus = status
+    nonisolated func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        Task { @MainActor in
+            self.authorizationStatus = status
 
-        switch status {
-        case .authorizedWhenInUse, .authorizedAlways:
-            startUpdatingLocation()
-        case .denied, .restricted:
-            self.errorMessage = "Location permission denied"
-        case .notDetermined:
-            requestLocationPermission()
-        @unknown default:
-            break
+            switch status {
+            case .authorizedWhenInUse, .authorizedAlways:
+                startUpdatingLocation()
+            case .denied, .restricted:
+                self.errorMessage = "Location permission denied"
+            case .notDetermined:
+                requestLocationPermission()
+            @unknown default:
+                break
+            }
         }
     }
 

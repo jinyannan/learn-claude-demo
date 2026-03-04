@@ -97,7 +97,7 @@ class PetViewModel: ObservableObject {
 
         Task {
             do {
-                let updatedPet = try await api.updatePet(id: id, pet)
+                let updatedPet = try await api.updatePet(id: id, pet: pet)
                 if let index = myPets.firstIndex(where: { $0.id == id }) {
                     myPets[index] = updatedPet
                 }

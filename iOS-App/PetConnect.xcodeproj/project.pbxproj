@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		119F0E1455C50A51819CA1FB /* ServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9D1E3A13655EF4D85537D /* ServiceAPI.swift */; };
+		1213E5D089930A3C1B116066 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA70956EB172CCE6EDD9D165 /* Message.swift */; };
+		2404D637F41DAEB32E3017C1 /* MessageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45642212C8146BB7600ACC5 /* MessageAPI.swift */; };
+		2DEA0562D7AF313772354F82 /* PetConnectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA78D900D6BE14AA324F093 /* PetConnectApp.swift */; };
+		2EBAF3CDCEE9D3BA7F13F705 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC1B00BEB58D00E2E09B022 /* Models.swift */; };
+		39054BBE728B8F3B89BC2D74 /* LocationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62130DBCD149F46EB7B1EE27 /* LocationAPI.swift */; };
+		40E176BF1D543F9660ABB33A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA41A71949965066E0CB73B /* HomeView.swift */; };
+		429FECF99C38AF238C86B3E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1390621391721834CE2B2B9C /* ContentView.swift */; };
+		47B91261BF2A6BF56881559B /* NearbyPetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712549C5B4738AD6F998023D /* NearbyPetsView.swift */; };
+		4E2B1423E1F92B61B0EBDEF5 /* DiscoveryFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDAE24645860E61B9F11CFA /* DiscoveryFeedView.swift */; };
+		52A29A63D3937FA3650C73BD /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30C25388590DF7B7814B6A0 /* APIClient.swift */; };
+		597B1BFE582CC8D49D117EE5 /* PostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE4C2DD0A381A61E741783C /* PostAPI.swift */; };
+		5A18F9A67C338C56096BE48E /* ServicesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250EF97E25442FA692CBA00 /* ServicesListView.swift */; };
+		689A668059A5A17C31EB3946 /* ServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD89A82FB5C50C84EB64647 /* ServiceViewModel.swift */; };
+		6AB2E4346B4FA37FFFDD8B98 /* PetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC86324D1E7F585A0570E4F1 /* PetAPI.swift */; };
+		8194BEDC84BE7CB2506B6A03 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C192FF7F94A9011A5F4B5F80 /* LoginView.swift */; };
+		89640CE7129FC47473A8C4B2 /* PostCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91982D193C301984C74A44BB /* PostCardView.swift */; };
+		8E7F536E1A9BEA5187D3F9A5 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0C20AAD2C2D5F11FAD45EB /* FeedViewModel.swift */; };
+		945F93AD59E42C12FFCFB664 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF71F591455965A0F9B67CC /* Pet.swift */; };
+		9BA573C4EC57FF46230EF259 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198F7D2510CE292EF7EDF551 /* FeedView.swift */; };
+		A599A76AE027E4AA193D621D /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DE52A14FE5724592A524AD /* LocationViewModel.swift */; };
+		A6D37D4EFD9C93E42D39BBB7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB8E1D21A8CAE703982CE3C /* AuthService.swift */; };
+		ACE000508F25B4D9BEDBA8DE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA91CDAA9A3698D53DD2860 /* Post.swift */; };
+		B5875FF3BA6A1F224D0ED35D /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE114F21A2581ABA3AAAA032 /* PostViewModel.swift */; };
+		C191560DD8B7DC02F356BECF /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D3D627630D97B1CC6569D5 /* Theme.swift */; };
+		D1E23B6514927A399B6EF7DB /* PetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3CACD19347F8FD3861B07B /* PetViewModel.swift */; };
+		D9474F516498EA8AC8C9A4F0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBEC16D8D6254AE5B320384 /* Constants.swift */; };
+		DE75D217AD42E3426FA7A1AB /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E10867466F325C899D8097 /* Service.swift */; };
+		E919E1C7B92E19BDBD13F17A /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D397F1004A0DFAECC4D3B285 /* NetworkResponse.swift */; };
+		EAD9480D58DA550CD3EDBE86 /* FeedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711C042E78B5AB76F001D9AB /* FeedPost.swift */; };
+		EB38D9398E8FBE8F1520813C /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE34CD3DC8BAE50FB72FDE3 /* FeedService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0BE34CD3DC8BAE50FB72FDE3 /* FeedService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
+		1390621391721834CE2B2B9C /* ContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		16C9D1E3A13655EF4D85537D /* ServiceAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceAPI.swift; sourceTree = "<group>"; };
+		198F7D2510CE292EF7EDF551 /* FeedView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		3BA91CDAA9A3698D53DD2860 /* Post.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		3CDAE24645860E61B9F11CFA /* DiscoveryFeedView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiscoveryFeedView.swift; sourceTree = "<group>"; };
+		5250EF97E25442FA692CBA00 /* ServicesListView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServicesListView.swift; sourceTree = "<group>"; };
+		5AA30D307CAEF54787B56F99 /* PetConnect.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = PetConnect.entitlements; sourceTree = "<group>"; };
+		5DBEC16D8D6254AE5B320384 /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5FF71F591455965A0F9B67CC /* Pet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		62130DBCD149F46EB7B1EE27 /* LocationAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocationAPI.swift; sourceTree = "<group>"; };
+		6EC1B00BEB58D00E2E09B022 /* Models.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		711C042E78B5AB76F001D9AB /* FeedPost.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FeedPost.swift; sourceTree = "<group>"; };
+		712549C5B4738AD6F998023D /* NearbyPetsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NearbyPetsView.swift; sourceTree = "<group>"; };
+		91982D193C301984C74A44BB /* PostCardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PostCardView.swift; sourceTree = "<group>"; };
+		9E0C20AAD2C2D5F11FAD45EB /* FeedViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		A3E10867466F325C899D8097 /* Service.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		AC3CACD19347F8FD3861B07B /* PetViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PetViewModel.swift; sourceTree = "<group>"; };
+		AFD89A82FB5C50C84EB64647 /* ServiceViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceViewModel.swift; sourceTree = "<group>"; };
+		BBA41A71949965066E0CB73B /* HomeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BC86324D1E7F585A0570E4F1 /* PetAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PetAPI.swift; sourceTree = "<group>"; };
+		C0B0537C7A9F43C2B9992EC0 /* PetConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C192FF7F94A9011A5F4B5F80 /* LoginView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C30C25388590DF7B7814B6A0 /* APIClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		D397F1004A0DFAECC4D3B285 /* NetworkResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		D45642212C8146BB7600ACC5 /* MessageAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessageAPI.swift; sourceTree = "<group>"; };
+		D5D3D627630D97B1CC6569D5 /* Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		DCB8E1D21A8CAE703982CE3C /* AuthService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		DEA78D900D6BE14AA324F093 /* PetConnectApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PetConnectApp.swift; sourceTree = "<group>"; };
+		ECE4C2DD0A381A61E741783C /* PostAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PostAPI.swift; sourceTree = "<group>"; };
+		EE114F21A2581ABA3AAAA032 /* PostViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		F3DE52A14FE5724592A524AD /* LocationViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		FA70956EB172CCE6EDD9D165 /* Message.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F1A3AB2346CD441C91D9135F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E74E3A32446CC04DACFBA79 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5250EF97E25442FA692CBA00 /* ServicesListView.swift */,
+			);
+			name = Services;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2120EF49D1C76A8A19C2AEB8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A3E10867466F325C899D8097 /* Service.swift */,
+				D397F1004A0DFAECC4D3B285 /* NetworkResponse.swift */,
+				FA70956EB172CCE6EDD9D165 /* Message.swift */,
+				711C042E78B5AB76F001D9AB /* FeedPost.swift */,
+				6EC1B00BEB58D00E2E09B022 /* Models.swift */,
+				3BA91CDAA9A3698D53DD2860 /* Post.swift */,
+				5FF71F591455965A0F9B67CC /* Pet.swift */,
+			);
+			name = Models;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2434BF551ACC152340A6366F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E11FB277925AF7EF12898D8C /* Home */,
+				3CDAE24645860E61B9F11CFA /* DiscoveryFeedView.swift */,
+				C192FF7F94A9011A5F4B5F80 /* LoginView.swift */,
+				91982D193C301984C74A44BB /* PostCardView.swift */,
+				906A0ECECA60C9D5ED715744 /* Discovery */,
+				EADDE0CFBAA09970ECCA89EE /* Community */,
+				0E74E3A32446CC04DACFBA79 /* Services */,
+			);
+			name = Views;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6E8202836D61F444191049C8 /* PetConnect */ = {
+			isa = PBXGroup;
+			children = (
+				7505DB48D2EFA74C432FFDEE /* ViewModels */,
+				E3D565CEDA0B32A398052E5A /* Network */,
+				AA2469B74322A0E72674D110 /* Utils */,
+				2120EF49D1C76A8A19C2AEB8 /* Models */,
+				5AA30D307CAEF54787B56F99 /* PetConnect.entitlements */,
+				DEA78D900D6BE14AA324F093 /* PetConnectApp.swift */,
+				D5D3D627630D97B1CC6569D5 /* Theme.swift */,
+				2434BF551ACC152340A6366F /* Views */,
+				1390621391721834CE2B2B9C /* ContentView.swift */,
+			);
+			name = PetConnect;
+			path = .;
+			sourceTree = "<group>";
+		};
+		7505DB48D2EFA74C432FFDEE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AFD89A82FB5C50C84EB64647 /* ServiceViewModel.swift */,
+				EE114F21A2581ABA3AAAA032 /* PostViewModel.swift */,
+				AC3CACD19347F8FD3861B07B /* PetViewModel.swift */,
+				F3DE52A14FE5724592A524AD /* LocationViewModel.swift */,
+				9E0C20AAD2C2D5F11FAD45EB /* FeedViewModel.swift */,
+			);
+			name = ViewModels;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		906A0ECECA60C9D5ED715744 /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				712549C5B4738AD6F998023D /* NearbyPetsView.swift */,
+			);
+			name = Discovery;
+			path = Discovery;
+			sourceTree = "<group>";
+		};
+		981612479DEE407497ABDE1C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA2469B74322A0E72674D110 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5DBEC16D8D6254AE5B320384 /* Constants.swift */,
+			);
+			name = Utils;
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E11FB277925AF7EF12898D8C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BBA41A71949965066E0CB73B /* HomeView.swift */,
+			);
+			name = Home;
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E3D565CEDA0B32A398052E5A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BC86324D1E7F585A0570E4F1 /* PetAPI.swift */,
+				62130DBCD149F46EB7B1EE27 /* LocationAPI.swift */,
+				16C9D1E3A13655EF4D85537D /* ServiceAPI.swift */,
+				D45642212C8146BB7600ACC5 /* MessageAPI.swift */,
+				0BE34CD3DC8BAE50FB72FDE3 /* FeedService.swift */,
+				C30C25388590DF7B7814B6A0 /* APIClient.swift */,
+				DCB8E1D21A8CAE703982CE3C /* AuthService.swift */,
+				ECE4C2DD0A381A61E741783C /* PostAPI.swift */,
+			);
+			name = Network;
+			path = Network;
+			sourceTree = "<group>";
+		};
+		EADDE0CFBAA09970ECCA89EE /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				198F7D2510CE292EF7EDF551 /* FeedView.swift */,
+			);
+			name = Community;
+			path = Community;
+			sourceTree = "<group>";
+		};
+		FFFD372DFDD74F5BBF1EF4D2 = {
+			isa = PBXGroup;
+			children = (
+				6E8202836D61F444191049C8 /* PetConnect */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A26BE3AEACD74994949FC17F /* PetConnect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A3DFB2A854F4478BDF6181D /* Build configuration list for PBXNativeTarget "PetConnect" */;
+			buildPhases = (
+				EAE9D3078F8A4BCE9E60633C /* Sources */,
+				F1A3AB2346CD441C91D9135F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PetConnect;
+			productName = PetConnect;
+			productReference = C0B0537C7A9F43C2B9992EC0 /* PetConnect.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A26BE3AEACD74994949FC17A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A26BE3AEACD74994949FC17F = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A09683581D0645D7BBA9B54A /* Build configuration list for PBXProject "PetConnect" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFFD372DFDD74F5BBF1EF4D2;
+			productRefGroup = 981612479DEE407497ABDE1C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A26BE3AEACD74994949FC17F /* PetConnect */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EAE9D3078F8A4BCE9E60633C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				689A668059A5A17C31EB3946 /* ServiceViewModel.swift in Sources */,
+				B5875FF3BA6A1F224D0ED35D /* PostViewModel.swift in Sources */,
+				D1E23B6514927A399B6EF7DB /* PetViewModel.swift in Sources */,
+				A599A76AE027E4AA193D621D /* LocationViewModel.swift in Sources */,
+				8E7F536E1A9BEA5187D3F9A5 /* FeedViewModel.swift in Sources */,
+				6AB2E4346B4FA37FFFDD8B98 /* PetAPI.swift in Sources */,
+				39054BBE728B8F3B89BC2D74 /* LocationAPI.swift in Sources */,
+				119F0E1455C50A51819CA1FB /* ServiceAPI.swift in Sources */,
+				2404D637F41DAEB32E3017C1 /* MessageAPI.swift in Sources */,
+				EB38D9398E8FBE8F1520813C /* FeedService.swift in Sources */,
+				52A29A63D3937FA3650C73BD /* APIClient.swift in Sources */,
+				A6D37D4EFD9C93E42D39BBB7 /* AuthService.swift in Sources */,
+				597B1BFE582CC8D49D117EE5 /* PostAPI.swift in Sources */,
+				D9474F516498EA8AC8C9A4F0 /* Constants.swift in Sources */,
+				DE75D217AD42E3426FA7A1AB /* Service.swift in Sources */,
+				E919E1C7B92E19BDBD13F17A /* NetworkResponse.swift in Sources */,
+				1213E5D089930A3C1B116066 /* Message.swift in Sources */,
+				EAD9480D58DA550CD3EDBE86 /* FeedPost.swift in Sources */,
+				2EBAF3CDCEE9D3BA7F13F705 /* Models.swift in Sources */,
+				ACE000508F25B4D9BEDBA8DE /* Post.swift in Sources */,
+				945F93AD59E42C12FFCFB664 /* Pet.swift in Sources */,
+				2DEA0562D7AF313772354F82 /* PetConnectApp.swift in Sources */,
+				C191560DD8B7DC02F356BECF /* Theme.swift in Sources */,
+				40E176BF1D543F9660ABB33A /* HomeView.swift in Sources */,
+				4E2B1423E1F92B61B0EBDEF5 /* DiscoveryFeedView.swift in Sources */,
+				8194BEDC84BE7CB2506B6A03 /* LoginView.swift in Sources */,
+				89640CE7129FC47473A8C4B2 /* PostCardView.swift in Sources */,
+				47B91261BF2A6BF56881559B /* NearbyPetsView.swift in Sources */,
+				9BA573C4EC57FF46230EF259 /* FeedView.swift in Sources */,
+				5A18F9A67C338C56096BE48E /* ServicesListView.swift in Sources */,
+				429FECF99C38AF238C86B3E7 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		259D461BF2394A0799797A2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6DFEA7B5A63046C5A9679EC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.PetConnect;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD64B0DB30B74AEFACE895CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.PetConnect;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DDBDFCEE71664EA6ACE0FCD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A3DFB2A854F4478BDF6181D /* Build configuration list for PBXNativeTarget "PetConnect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DFEA7B5A63046C5A9679EC0 /* Debug */,
+				AD64B0DB30B74AEFACE895CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A09683581D0645D7BBA9B54A /* Build configuration list for PBXProject "PetConnect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDBDFCEE71664EA6ACE0FCD0 /* Debug */,
+				259D461BF2394A0799797A2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A26BE3AEACD74994949FC17A /* Project object */;
+}
